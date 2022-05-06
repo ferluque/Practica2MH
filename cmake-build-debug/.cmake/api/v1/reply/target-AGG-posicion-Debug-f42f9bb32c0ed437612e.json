@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "AGG-uniforme.exe"
+			"path" : "AGG-posicion.exe"
 		},
 		{
-			"path" : "AGG-uniforme.pdb"
+			"path" : "AGG-posicion.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -30,19 +30,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 12,
+				"line" : 14,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 13,
+				"line" : 15,
 				"parent" : 0
 			},
 			{
@@ -54,7 +54,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 17,
+				"line" : 18,
 				"parent" : 0
 			}
 		]
@@ -75,7 +75,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/Fernando/Desktop/Practica2MH/comun"
+					"path" : "C:/Users/fl156/Desktop/Practica2MH/comun"
 				}
 			],
 			"language" : "CXX",
@@ -96,15 +96,15 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 2,
-			"id" : "Problem::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 3,
 			"id" : "Solution::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "Problem::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "AGG-uniforme::@6890427a1f51a3e7e1df",
+	"id" : "AGG-posicion::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -134,8 +134,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "AGG-uniforme",
-	"nameOnDisk" : "AGG-uniforme.exe",
+	"name" : "AGG-posicion",
+	"nameOnDisk" : "AGG-posicion.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -156,7 +156,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/AGG-uniforme.cpp",
+			"path" : "src/AGG-posicion.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

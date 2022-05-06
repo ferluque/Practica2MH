@@ -25,9 +25,7 @@ int main () {
 
     // GENERAR 50 PADRES NO SÉ COMO
 
-
-
-    // Genero vector de Cruces parejas de 0 a 99 y me quedo con los
+    // Genero vector de Cruces parejas de 0 a 49 y me quedo con los
     float Pc = 0.7;
     vector<int> cruces = genera_cruces(M);
     cout << cruces;
