@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "bl.exe"
+			"path" : "AGG-uniforme.exe"
 		},
 		{
-			"path" : "bl.pdb"
+			"path" : "AGG-uniforme.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -14,6 +14,7 @@
 		"commands" : 
 		[
 			"add_executable",
+			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
@@ -28,11 +29,23 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 10,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
+				"file" : 0,
+				"line" : 11,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
 				"file" : 0,
 				"line" : 5,
 				"parent" : 0
@@ -51,7 +64,7 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 4,
 					"path" : "C:/Users/fl156/Desktop/Practica2MH/comun"
 				}
 			],
@@ -62,7 +75,18 @@
 			]
 		}
 	],
-	"id" : "bl::@6890427a1f51a3e7e1df",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "Problem::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "Solution::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "AGG-uniforme::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -76,14 +100,24 @@
 				"role" : "flags"
 			},
 			{
+				"backtrace" : 2,
+				"fragment" : "libProblem.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "libSolution.a",
+				"role" : "libraries"
+			},
+			{
 				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "bl",
-	"nameOnDisk" : "bl.exe",
+	"name" : "AGG-uniforme",
+	"nameOnDisk" : "AGG-uniforme.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -104,7 +138,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/bl.cpp",
+			"path" : "src/AGG-uniforme.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

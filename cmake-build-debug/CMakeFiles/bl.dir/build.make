@@ -92,6 +92,8 @@ bl_EXTERNAL_OBJECTS =
 
 bl.exe: CMakeFiles/bl.dir/src/bl.cpp.obj
 bl.exe: CMakeFiles/bl.dir/build.make
+bl.exe: libSolution.a
+bl.exe: libProblem.a
 bl.exe: CMakeFiles/bl.dir/linklibs.rsp
 bl.exe: CMakeFiles/bl.dir/objects1.rsp
 bl.exe: CMakeFiles/bl.dir/link.txt

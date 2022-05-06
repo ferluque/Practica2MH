@@ -116,78 +116,115 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named greedy
+# Target rules for targets named Problem
 
 # Build rule for target.
-greedy: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 greedy
-.PHONY : greedy
+Problem: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Problem
+.PHONY : Problem
 
 # fast build rule for target.
-greedy/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make CMakeFiles/greedy.dir/build
-.PHONY : greedy/fast
+Problem/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem.dir\build.make CMakeFiles/Problem.dir/build
+.PHONY : Problem/fast
 
 #=============================================================================
-# Target rules for targets named bl
+# Target rules for targets named Solution
 
 # Build rule for target.
-bl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 bl
-.PHONY : bl
+Solution: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Solution
+.PHONY : Solution
 
 # fast build rule for target.
-bl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\bl.dir\build.make CMakeFiles/bl.dir/build
-.PHONY : bl/fast
+Solution/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Solution.dir\build.make CMakeFiles/Solution.dir/build
+.PHONY : Solution/fast
 
-src/bl.obj: src/bl.cpp.obj
-.PHONY : src/bl.obj
+#=============================================================================
+# Target rules for targets named AGG-uniforme
 
-# target to build an object file
-src/bl.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\bl.dir\build.make CMakeFiles/bl.dir/src/bl.cpp.obj
-.PHONY : src/bl.cpp.obj
+# Build rule for target.
+AGG-uniforme: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AGG-uniforme
+.PHONY : AGG-uniforme
 
-src/bl.i: src/bl.cpp.i
-.PHONY : src/bl.i
+# fast build rule for target.
+AGG-uniforme/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-uniforme.dir\build.make CMakeFiles/AGG-uniforme.dir/build
+.PHONY : AGG-uniforme/fast
 
-# target to preprocess a source file
-src/bl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\bl.dir\build.make CMakeFiles/bl.dir/src/bl.cpp.i
-.PHONY : src/bl.cpp.i
-
-src/bl.s: src/bl.cpp.s
-.PHONY : src/bl.s
-
-# target to generate assembly for a file
-src/bl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\bl.dir\build.make CMakeFiles/bl.dir/src/bl.cpp.s
-.PHONY : src/bl.cpp.s
-
-src/greedy.obj: src/greedy.cpp.obj
-.PHONY : src/greedy.obj
+comun/Problem.obj: comun/Problem.cpp.obj
+.PHONY : comun/Problem.obj
 
 # target to build an object file
-src/greedy.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make CMakeFiles/greedy.dir/src/greedy.cpp.obj
-.PHONY : src/greedy.cpp.obj
+comun/Problem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem.dir\build.make CMakeFiles/Problem.dir/comun/Problem.cpp.obj
+.PHONY : comun/Problem.cpp.obj
 
-src/greedy.i: src/greedy.cpp.i
-.PHONY : src/greedy.i
+comun/Problem.i: comun/Problem.cpp.i
+.PHONY : comun/Problem.i
 
 # target to preprocess a source file
-src/greedy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make CMakeFiles/greedy.dir/src/greedy.cpp.i
-.PHONY : src/greedy.cpp.i
+comun/Problem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem.dir\build.make CMakeFiles/Problem.dir/comun/Problem.cpp.i
+.PHONY : comun/Problem.cpp.i
 
-src/greedy.s: src/greedy.cpp.s
-.PHONY : src/greedy.s
+comun/Problem.s: comun/Problem.cpp.s
+.PHONY : comun/Problem.s
 
 # target to generate assembly for a file
-src/greedy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make CMakeFiles/greedy.dir/src/greedy.cpp.s
-.PHONY : src/greedy.cpp.s
+comun/Problem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Problem.dir\build.make CMakeFiles/Problem.dir/comun/Problem.cpp.s
+.PHONY : comun/Problem.cpp.s
+
+comun/Solution.obj: comun/Solution.cpp.obj
+.PHONY : comun/Solution.obj
+
+# target to build an object file
+comun/Solution.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Solution.dir\build.make CMakeFiles/Solution.dir/comun/Solution.cpp.obj
+.PHONY : comun/Solution.cpp.obj
+
+comun/Solution.i: comun/Solution.cpp.i
+.PHONY : comun/Solution.i
+
+# target to preprocess a source file
+comun/Solution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Solution.dir\build.make CMakeFiles/Solution.dir/comun/Solution.cpp.i
+.PHONY : comun/Solution.cpp.i
+
+comun/Solution.s: comun/Solution.cpp.s
+.PHONY : comun/Solution.s
+
+# target to generate assembly for a file
+comun/Solution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Solution.dir\build.make CMakeFiles/Solution.dir/comun/Solution.cpp.s
+.PHONY : comun/Solution.cpp.s
+
+src/AGG-uniforme.obj: src/AGG-uniforme.cpp.obj
+.PHONY : src/AGG-uniforme.obj
+
+# target to build an object file
+src/AGG-uniforme.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-uniforme.dir\build.make CMakeFiles/AGG-uniforme.dir/src/AGG-uniforme.cpp.obj
+.PHONY : src/AGG-uniforme.cpp.obj
+
+src/AGG-uniforme.i: src/AGG-uniforme.cpp.i
+.PHONY : src/AGG-uniforme.i
+
+# target to preprocess a source file
+src/AGG-uniforme.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-uniforme.dir\build.make CMakeFiles/AGG-uniforme.dir/src/AGG-uniforme.cpp.i
+.PHONY : src/AGG-uniforme.cpp.i
+
+src/AGG-uniforme.s: src/AGG-uniforme.cpp.s
+.PHONY : src/AGG-uniforme.s
+
+# target to generate assembly for a file
+src/AGG-uniforme.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-uniforme.dir\build.make CMakeFiles/AGG-uniforme.dir/src/AGG-uniforme.cpp.s
+.PHONY : src/AGG-uniforme.cpp.s
 
 # Help Target
 help:
@@ -197,14 +234,18 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... bl
-	@echo ... greedy
-	@echo ... src/bl.obj
-	@echo ... src/bl.i
-	@echo ... src/bl.s
-	@echo ... src/greedy.obj
-	@echo ... src/greedy.i
-	@echo ... src/greedy.s
+	@echo ... AGG-uniforme
+	@echo ... Problem
+	@echo ... Solution
+	@echo ... comun/Problem.obj
+	@echo ... comun/Problem.i
+	@echo ... comun/Problem.s
+	@echo ... comun/Solution.obj
+	@echo ... comun/Solution.i
+	@echo ... comun/Solution.s
+	@echo ... src/AGG-uniforme.obj
+	@echo ... src/AGG-uniforme.i
+	@echo ... src/AGG-uniforme.s
 .PHONY : help
 
 

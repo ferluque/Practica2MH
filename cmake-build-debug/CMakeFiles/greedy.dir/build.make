@@ -92,6 +92,8 @@ greedy_EXTERNAL_OBJECTS =
 
 greedy.exe: CMakeFiles/greedy.dir/src/greedy.cpp.obj
 greedy.exe: CMakeFiles/greedy.dir/build.make
+greedy.exe: libSolution.a
+greedy.exe: libProblem.a
 greedy.exe: CMakeFiles/greedy.dir/linklibs.rsp
 greedy.exe: CMakeFiles/greedy.dir/objects1.rsp
 greedy.exe: CMakeFiles/greedy.dir/link.txt
