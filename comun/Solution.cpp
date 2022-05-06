@@ -3,17 +3,20 @@
 //
 
 #include "Solution.h"
-#include <iostream>
-#include <vector>
+#include <map>
 
 using namespace std;
-using Random = effolkronium::basic_random_static;
+using Random = effolkronium::random_static;
 
-void Solution::check_max_min(float new_delta) {
-    if (new_delta > max_delta)
-        max_delta = new_delta;
-    if ((new_delta < min_delta)||(selected.size()==2))
-        min_delta = new_delta;
+void Solution::check_max_min() {
+    max_delta = min_delta = deltas.begin()->second;
+    for (auto it = deltas.begin(); it != deltas.end(); ++it) {
+        if ((*it).second > max_delta)
+            max_delta = (*it).second;
+        if ((*it).second < min_delta)
+            min_delta = (*it).second;
+    }
+    diff = max_delta - min_delta;
 }
 
 void Solution::update_diff(const vector<vector<float>> &d, int u){
@@ -32,15 +35,15 @@ void Solution::update_diff(const vector<vector<float>> &d, int u){
 //    check_max_min(deltas[deltas.size()-1]);
 //
 //    diff = max_delta-min_delta;
-    max_delta = min_delta = deltas.begin()->second;
-    for (map<int,float>::iterator it = deltas.begin(); it != deltas.end(); ++it) {
-        (*it).second += d[(*it).first][u];
-        check_max_min((*it).second);
-    }
-    deltas[u] = delta(u,d);
-
-    diff = max_delta-min_delta;
-    // ACTUALIZAR CON NUEVA CODIFICACIÓN
+//    max_delta = min_delta = deltas.begin()->second;
+//    for (map<int,float>::iterator it = deltas.begin(); it != deltas.end(); ++it) {
+//        (*it).second += d[(*it).first][u];
+//        check_max_min((*it).second);
+//    }
+//    deltas[u] = delta(u,d);
+//
+//    diff = max_delta-min_delta;
+//    // ACTUALIZAR CON NUEVA CODIFICACIÓN
 }
 
 // ACTUALIZADO
@@ -120,9 +123,10 @@ float Solution::get_new_diff(int u, const vector<vector<float>> &d) {
 
 //
 void Solution::add(int u, const vector<vector<float>> &d)  {
-    selected[u] = true;
-    // ACTUALIZAR UPDATE_DIFF, HARÁ FALTA DARLE LA u
-    update_diff(d, u);
+    // ACTUALIZAR CUANDO SE USE
+//    selected[u] = true;
+//    // ACTUALIZAR UPDATE_DIFF, HARÁ FALTA DARLE LA u
+////    update_diff(d, u);
 }
 
 // CREO QUE NO HAY QUE ACTUALIZAR NADA, SÍ EN exchange
@@ -168,21 +172,8 @@ ostream& operator<<(ostream& out, Solution s) {
     return out;
 }
 
-template <class T>
-ostream& operator<<(ostream& out, vector<T> v)  {
-    out << "(";
-    for (auto it=v.begin(); it!=v.end();++it)
-        out << *it << ",";
-    out <<")" << endl;
-    return out;
-}
-
-Solution::Solution() {
-    max_delta= min_delta = 0;
-}
-
 // AGG-Uniforme
-Solution Solution::cruce_uniforme(const Solution &s, const Problem p) const {
+Solution Solution::cruce_uniforme(const Solution &s, const Problem& p) const {
     vector<bool> s1 = this->selected;
     vector<bool> s2 = s.selected;
 
@@ -191,6 +182,7 @@ Solution Solution::cruce_uniforme(const Solution &s, const Problem p) const {
     for (int i = 0; i < s1.size(); i++) {
         if (s1[i] == s2[i])
             h[i] = s1[i];
+        // Los que no se elige aleatoriamente de uno u otro
         else {
             bool uno = Random::get<bool>();
             if (uno)
@@ -199,15 +191,100 @@ Solution Solution::cruce_uniforme(const Solution &s, const Problem p) const {
                 h[i] = s2[i];
         }
         h = repare(h, p);
-        return Solution(h);
     }
+    return Solution(h,p);
 }
 
 Solution::Solution(const std::vector<bool> &s, const Problem &p) {
     selected = s;
-    deltas.resize(p)
-    for (int i=0; i<selected.size(); i++)
-        if
+    for (int i=0; i<selected.size(); i++) {
+        if (selected[i]) {
+            deltas[i] = delta(i, p.get_d());
+        }
+    }
+    check_max_min();
 }
+
+vector<bool> Solution::repare(vector<bool> h, const Problem &p) const {
+
+}
+
+// AGG-posicion
+pair<Solution,Solution> Solution::cruce_posicion(const Solution &s, const Problem& p) const {
+    vector<bool> s1 = this->selected;
+    vector<bool> s2 = s.selected;
+
+    vector<bool> h1(s1.size());
+    vector<bool> h2(s1.size());
+
+    vector<bool> restos_p1;
+    vector<int> pos;
+    for (int i=0; i<s1.size(); i++) {
+        if (s1[i]==s2[i])
+            h1[i]=h2[i]=s1[i];
+        else {
+            restos_p1.push_back(s1[i]);
+            pos.push_back(i);
+        }
+    }
+    Random::shuffle(restos_p1);
+    for (int i=0; i<restos_p1.size(); i++)
+        h1[pos[i]]=restos_p1[i];
+    Random::shuffle(restos_p1);
+    for (int i=0; i<restos_p1.size();i++)
+        h2[pos[i]]=restos_p1[i];
+
+    return pair<Solution,Solution>(Solution(h1,p),Solution(h2,p));
+}
+
+Solution Solution::mutacion(const Problem &p) const {
+    // Generamos los genes que van a mutar
+    Solution mutada(*this);
+//    int xi = Random::get<int>(0,selected.size()-1);
+//    int xj = Random::get<int>(0,selected.size()-1);
+    int xi = 0;
+    int xj = 10;
+    bool aux = mutada.selected[xi];
+    mutada.selected[xi] = mutada.selected[xj];
+    mutada.selected[xj] = aux;
+    // Si ambos eran 0 o ambos eran 1 no van a cambiar los valores del diff
+    if (selected[xi]!=selected[xj]) {
+        // Si ahora es el xi el que pasa a ser 1 (antes xj era 1)
+        if (mutada.selected[xi]) {
+            // Eliminamos el xj de los deltas
+            // Antes de eliminar el xj de los deltas, debemos restarlo a los otros deltas
+            for (auto it = mutada.deltas.begin(); it!=mutada.deltas.end(); ++it)
+                if ((*it).first != xj)
+                    (*it).second -= p.get_d()[xj][(*it).first];
+            mutada.deltas.erase(xj);
+
+            // Ahora ya añadimos el xi
+            mutada.deltas[xi] = mutada.delta(xi,p.get_d());
+            // Y sumamos el delta que añade al resto
+            for (auto it = mutada.deltas.begin(); it!= mutada.deltas.end(); ++it)
+                if ((*it).first != xi)
+                    (*it).second += p.get_d()[xi][(*it).first];
+        }
+        // Si es el xj el que pasa a ser 1
+        else {
+            // Eliminamos el xi de los deltas
+            // Antes de eliminar el xj de los deltas, debemos restarlo a los otros deltas
+            for (auto it = mutada.deltas.begin(); it!=mutada.deltas.end(); ++it)
+                if ((*it).first != xi)
+                    (*it).second -= p.get_d()[xi][(*it).first];
+            mutada.deltas.erase(xi);
+
+            // Ahora ya añadimos el xj
+            mutada.deltas[xj] = mutada.delta(xj,p.get_d());
+            // Y sumamos el delta que añade al resto
+            for (auto it = mutada.deltas.begin(); it!= mutada.deltas.end(); ++it)
+                if ((*it).first != xj)
+                    (*it).second += p.get_d()[xj][(*it).first];
+        }
+        mutada.check_max_min();
+    }
+    return mutada;
+}
+
 
 

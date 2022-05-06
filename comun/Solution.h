@@ -10,7 +10,8 @@
 #include <fstream>
 #include <map>
 #include "random.hpp"
-#include "
+#include "Problem.h"
+
 
 class Solution {
 private:
@@ -20,7 +21,7 @@ private:
     float min_delta;
     std::map<int,float> deltas;
 
-    void check_max_min(float new_delta);
+    void check_max_min();
 
     /**
      * Actualiza el valor de diff con respecto al último valor introducido u
@@ -98,14 +99,30 @@ public:
     void print_dist(std::string file_out, const std::vector<std::vector<float>>& d);
 
     // AGG-Uniforme
-    Solution cruce_uniforme(const Solution& s) const;
+    Solution cruce_uniforme(const Solution& s, const Problem& p) const;
     std::vector<bool> repare(std::vector<bool> h, const Problem& p) const;
     Solution(const std::vector<bool>& s, const Problem& p);
+
+    // AGG-posicion
+    std::pair<Solution,Solution> cruce_posicion(const Solution& s, const Problem& p) const;
+
+    // AGG común
+    Solution mutacion(const Problem& p) const;
 };
 
 std::ostream& operator<<(std::ostream& out, Solution s);
 
 template <class T>
-std::ostream& operator<<(std::ostream& out, std::vector<T> v);
+std::ostream& operator<<(std::ostream& out, std::vector<T> v) {
+    out << "(";
+    for (auto it=v.begin(); it!=v.end();++it)
+        out << *it << ",";
+    out <<")" << std::endl;
+    return out;
+}
+
+Solution::Solution() {
+    max_delta= min_delta = 0;
+}
 
 #endif //MDD_SOLUTION_H

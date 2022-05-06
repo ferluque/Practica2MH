@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\fl156\Desktop\Practica2MH
+CMAKE_SOURCE_DIR = C:\Users\Fernando\Desktop\Practica2MH
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\CMakeFiles C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\CMakeFiles C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -154,6 +154,19 @@ AGG-uniforme/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-uniforme.dir\build.make CMakeFiles/AGG-uniforme.dir/build
 .PHONY : AGG-uniforme/fast
 
+#=============================================================================
+# Target rules for targets named AGG-posicion
+
+# Build rule for target.
+AGG-posicion: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AGG-posicion
+.PHONY : AGG-posicion
+
+# fast build rule for target.
+AGG-posicion/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-posicion.dir\build.make CMakeFiles/AGG-posicion.dir/build
+.PHONY : AGG-posicion/fast
+
 comun/Problem.obj: comun/Problem.cpp.obj
 .PHONY : comun/Problem.obj
 
@@ -202,6 +215,30 @@ comun/Solution.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Solution.dir\build.make CMakeFiles/Solution.dir/comun/Solution.cpp.s
 .PHONY : comun/Solution.cpp.s
 
+src/AGG-posicion.obj: src/AGG-posicion.cpp.obj
+.PHONY : src/AGG-posicion.obj
+
+# target to build an object file
+src/AGG-posicion.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-posicion.dir\build.make CMakeFiles/AGG-posicion.dir/src/AGG-posicion.cpp.obj
+.PHONY : src/AGG-posicion.cpp.obj
+
+src/AGG-posicion.i: src/AGG-posicion.cpp.i
+.PHONY : src/AGG-posicion.i
+
+# target to preprocess a source file
+src/AGG-posicion.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-posicion.dir\build.make CMakeFiles/AGG-posicion.dir/src/AGG-posicion.cpp.i
+.PHONY : src/AGG-posicion.cpp.i
+
+src/AGG-posicion.s: src/AGG-posicion.cpp.s
+.PHONY : src/AGG-posicion.s
+
+# target to generate assembly for a file
+src/AGG-posicion.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-posicion.dir\build.make CMakeFiles/AGG-posicion.dir/src/AGG-posicion.cpp.s
+.PHONY : src/AGG-posicion.cpp.s
+
 src/AGG-uniforme.obj: src/AGG-uniforme.cpp.obj
 .PHONY : src/AGG-uniforme.obj
 
@@ -234,6 +271,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... AGG-posicion
 	@echo ... AGG-uniforme
 	@echo ... Problem
 	@echo ... Solution
@@ -243,6 +281,9 @@ help:
 	@echo ... comun/Solution.obj
 	@echo ... comun/Solution.i
 	@echo ... comun/Solution.s
+	@echo ... src/AGG-posicion.obj
+	@echo ... src/AGG-posicion.i
+	@echo ... src/AGG-posicion.s
 	@echo ... src/AGG-uniforme.obj
 	@echo ... src/AGG-uniforme.i
 	@echo ... src/AGG-uniforme.s

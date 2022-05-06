@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MDD",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AGG-posicion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AGG-posicion-Debug-ddd985b32b98e28a9339.json",
+					"name" : "AGG-posicion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AGG-uniforme::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AGG-uniforme-Debug-769e685e216f4cf0385f.json",
+					"name" : "AGG-uniforme",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Problem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Problem-Debug-23479c7d5b2ac26b77d0.json",
+					"name" : "Problem",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Solution::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Solution-Debug-73f9586aba484b43c1d6.json",
+					"name" : "Solution",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Fernando/Desktop/Practica2MH/cmake-build-debug",
+		"source" : "C:/Users/Fernando/Desktop/Practica2MH"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
