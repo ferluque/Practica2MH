@@ -1,0 +1,132 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MDD",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AGE-posicion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AGE-posicion-Debug-11e362ff99e2db25595b.json",
+					"name" : "AGE-posicion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AGE-uniforme::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AGE-uniforme-Debug-d98230db3de9c8f86a52.json",
+					"name" : "AGE-uniforme",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AGG-posicion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AGG-posicion-Debug-bb925efa1fbfa8ccb44a.json",
+					"name" : "AGG-posicion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AGG-uniforme::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AGG-uniforme-Debug-448c5906dda8cafdeeb7.json",
+					"name" : "AGG-uniforme",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AM-10-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AM-10-1-Debug-e9408afe01240ecb03c7.json",
+					"name" : "AM-10-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Problem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Problem-Debug-23479c7d5b2ac26b77d0.json",
+					"name" : "Problem",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Solution::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Solution-Debug-73f9586aba484b43c1d6.json",
+					"name" : "Solution",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Solution_enteros::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Solution_enteros-Debug-c8f46736c6d877b7b687.json",
+					"name" : "Solution_enteros",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pruebas::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pruebas-Debug-86326ab47735d87de3b5.json",
+					"name" : "pruebas",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Fernando/Desktop/Practica2MH/cmake-build-debug",
+		"source" : "C:/Users/Fernando/Desktop/Practica2MH"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
