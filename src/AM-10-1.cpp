@@ -5,27 +5,52 @@
 #include "Solution_enteros.h"
 #include "random.hpp"
 #include "bl.h"
+#include <filesystem>
 
 using namespace std;
 using Random = effolkronium::random_static;
 
+Solution_enteros AM_10_1(int M, Problem p);
+
 // ESCOJO EL ALGORITMO ESTACIONARIO CON CRUCE UNIFORME
 int main () {
     Random::seed(0);
-    Problem p("..\\datos\\GKD-b_6_n25_m7.txt");
+    int M=10;
+
+    string path = "..\\datos";
+    ofstream salida;
+    salida.open("..\\resultados\\AM-10-1.csv");
+    for (const auto &entry: std::filesystem::directory_iterator(path)) {
+        string file = entry.path().u8string();
+        salida << file << ";";
+
+        Problem p(file);
+        auto tinicio = clock();
+        Solution_enteros S = AM_10_1(M,p);
+        auto tfin = clock();
+        salida << S.get_diff() << ";" << double(tfin-tinicio)/CLOCKS_PER_SEC*1000 << ";" << endl;
+        cout << "Terminado " << file << endl;
+    }
+}
+
+Solution_enteros AM_10_1(int M, Problem p) {
     int generaciones = 0;
     int evaluaciones = 0;
-    int M = 10;
 
     // Generamos la población inicial
     vector<Solution_enteros> Padres = genera_p0(M,p);
+    // CORRECTO
 
     // 10 generaciones - búsqueda local (mientras evaluaciones < 1e5)
     while (evaluaciones < 1e5) {
         // Toca búsqueda local
         if ((generaciones%10==0)&&(generaciones/10>=1)){
-            for (int i=0; i<Padres.size();i++)
-                Padres[i] = bl(p,Padres[i]);
+            for (int i=0; i<Padres.size();i++) {
+                pair<Solution_enteros,int> par = bl(p,Padres[i]);
+                evaluaciones += par.second;
+                Padres[i] = par.first;
+            }
+            generaciones /= 10;
         }
         else {
             ++generaciones;
@@ -68,4 +93,10 @@ int main () {
         }
     }
 
+    int mejor_padre = 0;
+    for (int i=1; i<Padres.size(); i++)
+        if (Padres[i].get_diff()<Padres[mejor_padre].get_diff())
+            mejor_padre = i;
+
+    return Padres[mejor_padre];
 }

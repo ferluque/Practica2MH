@@ -38,4 +38,6 @@ public:
     const std::vector<std::vector<float>>& get_d() const;
 };
 
+std::ostream& operator<<(std::ostream& out, Problem p);
+
 #endif //MDD_PROBLEM_H

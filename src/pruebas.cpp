@@ -31,13 +31,9 @@ int main() {
 //    cout << cruce.second << endl;
 //    cruce.second.print_dist("..\\resultados\\cruce2.csv",p.get_d());
     Random::seed(0);
-    Problem p("..\\datos\\GKD-b_6_n25_m7.txt");
-    vector<int> v = {1,2,3,4,5,6,7};
-    Solution_enteros s(v,p);
-    cout << s << endl;
-    s.print_dist("..\\resultados\\sinmutar.csv",p.get_d());
+    Problem p("..\\datos\\GKD-b_7_n25_m7.txt");
 
-    s = s.mutacion(p);
-    cout << s << endl;
-    s.print_dist("..\\resultados\\mutado.csv",p.get_d());
+    vector<Solution_enteros> p0 = genera_p0(5, p);
+
+
 }

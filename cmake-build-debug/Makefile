@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\fl156\Desktop\Practica2MH
+CMAKE_SOURCE_DIR = C:\Users\Fernando\Desktop\Practica2MH
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\CMakeFiles C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\CMakeFiles C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,19 +142,6 @@ Solution/fast:
 .PHONY : Solution/fast
 
 #=============================================================================
-# Target rules for targets named AM-10-1
-
-# Build rule for target.
-AM-10-1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AM-10-1
-.PHONY : AM-10-1
-
-# fast build rule for target.
-AM-10-1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-1.dir\build.make CMakeFiles/AM-10-1.dir/build
-.PHONY : AM-10-1/fast
-
-#=============================================================================
 # Target rules for targets named AGG-posicion
 
 # Build rule for target.
@@ -181,19 +168,6 @@ Solution_enteros/fast:
 .PHONY : Solution_enteros/fast
 
 #=============================================================================
-# Target rules for targets named AGG-uniforme
-
-# Build rule for target.
-AGG-uniforme: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AGG-uniforme
-.PHONY : AGG-uniforme
-
-# fast build rule for target.
-AGG-uniforme/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-uniforme.dir\build.make CMakeFiles/AGG-uniforme.dir/build
-.PHONY : AGG-uniforme/fast
-
-#=============================================================================
 # Target rules for targets named AGE-posicion
 
 # Build rule for target.
@@ -207,6 +181,32 @@ AGE-posicion/fast:
 .PHONY : AGE-posicion/fast
 
 #=============================================================================
+# Target rules for targets named bl
+
+# Build rule for target.
+bl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 bl
+.PHONY : bl
+
+# fast build rule for target.
+bl/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bl.dir\build.make CMakeFiles/bl.dir/build
+.PHONY : bl/fast
+
+#=============================================================================
+# Target rules for targets named AGG-uniforme
+
+# Build rule for target.
+AGG-uniforme: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AGG-uniforme
+.PHONY : AGG-uniforme
+
+# fast build rule for target.
+AGG-uniforme/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-uniforme.dir\build.make CMakeFiles/AGG-uniforme.dir/build
+.PHONY : AGG-uniforme/fast
+
+#=============================================================================
 # Target rules for targets named AGE-uniforme
 
 # Build rule for target.
@@ -218,6 +218,45 @@ AGE-uniforme: cmake_check_build_system
 AGE-uniforme/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGE-uniforme.dir\build.make CMakeFiles/AGE-uniforme.dir/build
 .PHONY : AGE-uniforme/fast
+
+#=============================================================================
+# Target rules for targets named AM-10-1
+
+# Build rule for target.
+AM-10-1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AM-10-1
+.PHONY : AM-10-1
+
+# fast build rule for target.
+AM-10-1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-1.dir\build.make CMakeFiles/AM-10-1.dir/build
+.PHONY : AM-10-1/fast
+
+#=============================================================================
+# Target rules for targets named AM-10-0.1
+
+# Build rule for target.
+AM-10-0.1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AM-10-0.1
+.PHONY : AM-10-0.1
+
+# fast build rule for target.
+AM-10-0.1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-0.1.dir\build.make CMakeFiles/AM-10-0.1.dir/build
+.PHONY : AM-10-0.1/fast
+
+#=============================================================================
+# Target rules for targets named AM-10-0.1mej
+
+# Build rule for target.
+AM-10-0.1mej: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AM-10-0.1mej
+.PHONY : AM-10-0.1mej
+
+# fast build rule for target.
+AM-10-0.1mej/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-0.1mej.dir\build.make CMakeFiles/AM-10-0.1mej.dir/build
+.PHONY : AM-10-0.1mej/fast
 
 #=============================================================================
 # Target rules for targets named pruebas
@@ -303,6 +342,30 @@ comun/Solution_enteros.s: comun/Solution_enteros.cpp.s
 comun/Solution_enteros.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Solution_enteros.dir\build.make CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.s
 .PHONY : comun/Solution_enteros.cpp.s
+
+comun/bl.obj: comun/bl.cpp.obj
+.PHONY : comun/bl.obj
+
+# target to build an object file
+comun/bl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bl.dir\build.make CMakeFiles/bl.dir/comun/bl.cpp.obj
+.PHONY : comun/bl.cpp.obj
+
+comun/bl.i: comun/bl.cpp.i
+.PHONY : comun/bl.i
+
+# target to preprocess a source file
+comun/bl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bl.dir\build.make CMakeFiles/bl.dir/comun/bl.cpp.i
+.PHONY : comun/bl.cpp.i
+
+comun/bl.s: comun/bl.cpp.s
+.PHONY : comun/bl.s
+
+# target to generate assembly for a file
+comun/bl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bl.dir\build.make CMakeFiles/bl.dir/comun/bl.cpp.s
+.PHONY : comun/bl.cpp.s
 
 src/AGE-posicion.obj: src/AGE-posicion.cpp.obj
 .PHONY : src/AGE-posicion.obj
@@ -400,6 +463,54 @@ src/AGG-uniforme.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AGG-uniforme.dir\build.make CMakeFiles/AGG-uniforme.dir/src/AGG-uniforme.cpp.s
 .PHONY : src/AGG-uniforme.cpp.s
 
+src/AM-10-0.1.obj: src/AM-10-0.1.cpp.obj
+.PHONY : src/AM-10-0.1.obj
+
+# target to build an object file
+src/AM-10-0.1.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-0.1.dir\build.make CMakeFiles/AM-10-0.1.dir/src/AM-10-0.1.cpp.obj
+.PHONY : src/AM-10-0.1.cpp.obj
+
+src/AM-10-0.1.i: src/AM-10-0.1.cpp.i
+.PHONY : src/AM-10-0.1.i
+
+# target to preprocess a source file
+src/AM-10-0.1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-0.1.dir\build.make CMakeFiles/AM-10-0.1.dir/src/AM-10-0.1.cpp.i
+.PHONY : src/AM-10-0.1.cpp.i
+
+src/AM-10-0.1.s: src/AM-10-0.1.cpp.s
+.PHONY : src/AM-10-0.1.s
+
+# target to generate assembly for a file
+src/AM-10-0.1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-0.1.dir\build.make CMakeFiles/AM-10-0.1.dir/src/AM-10-0.1.cpp.s
+.PHONY : src/AM-10-0.1.cpp.s
+
+src/AM-10-0.1mej.obj: src/AM-10-0.1mej.cpp.obj
+.PHONY : src/AM-10-0.1mej.obj
+
+# target to build an object file
+src/AM-10-0.1mej.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-0.1mej.dir\build.make CMakeFiles/AM-10-0.1mej.dir/src/AM-10-0.1mej.cpp.obj
+.PHONY : src/AM-10-0.1mej.cpp.obj
+
+src/AM-10-0.1mej.i: src/AM-10-0.1mej.cpp.i
+.PHONY : src/AM-10-0.1mej.i
+
+# target to preprocess a source file
+src/AM-10-0.1mej.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-0.1mej.dir\build.make CMakeFiles/AM-10-0.1mej.dir/src/AM-10-0.1mej.cpp.i
+.PHONY : src/AM-10-0.1mej.cpp.i
+
+src/AM-10-0.1mej.s: src/AM-10-0.1mej.cpp.s
+.PHONY : src/AM-10-0.1mej.s
+
+# target to generate assembly for a file
+src/AM-10-0.1mej.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AM-10-0.1mej.dir\build.make CMakeFiles/AM-10-0.1mej.dir/src/AM-10-0.1mej.cpp.s
+.PHONY : src/AM-10-0.1mej.cpp.s
+
 src/AM-10-1.obj: src/AM-10-1.cpp.obj
 .PHONY : src/AM-10-1.obj
 
@@ -460,10 +571,13 @@ help:
 	@echo ... AGE-uniforme
 	@echo ... AGG-posicion
 	@echo ... AGG-uniforme
+	@echo ... AM-10-0.1
+	@echo ... AM-10-0.1mej
 	@echo ... AM-10-1
 	@echo ... Problem
 	@echo ... Solution
 	@echo ... Solution_enteros
+	@echo ... bl
 	@echo ... pruebas
 	@echo ... comun/Problem.obj
 	@echo ... comun/Problem.i
@@ -474,6 +588,9 @@ help:
 	@echo ... comun/Solution_enteros.obj
 	@echo ... comun/Solution_enteros.i
 	@echo ... comun/Solution_enteros.s
+	@echo ... comun/bl.obj
+	@echo ... comun/bl.i
+	@echo ... comun/bl.s
 	@echo ... src/AGE-posicion.obj
 	@echo ... src/AGE-posicion.i
 	@echo ... src/AGE-posicion.s
@@ -486,6 +603,12 @@ help:
 	@echo ... src/AGG-uniforme.obj
 	@echo ... src/AGG-uniforme.i
 	@echo ... src/AGG-uniforme.s
+	@echo ... src/AM-10-0.1.obj
+	@echo ... src/AM-10-0.1.i
+	@echo ... src/AM-10-0.1.s
+	@echo ... src/AM-10-0.1mej.obj
+	@echo ... src/AM-10-0.1mej.i
+	@echo ... src/AM-10-0.1mej.s
 	@echo ... src/AM-10-1.obj
 	@echo ... src/AM-10-1.i
 	@echo ... src/AM-10-1.s

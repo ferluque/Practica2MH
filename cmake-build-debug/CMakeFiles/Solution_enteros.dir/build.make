@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\fl156\Desktop\Practica2MH
+CMAKE_SOURCE_DIR = C:\Users\Fernando\Desktop\Practica2MH
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Solution_enteros.dir/depend.make
@@ -72,16 +72,16 @@ CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj: CMakeFiles/Solut
 CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj: CMakeFiles/Solution_enteros.dir/includes_CXX.rsp
 CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj: ../comun/Solution_enteros.cpp
 CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj: CMakeFiles/Solution_enteros.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj -MF CMakeFiles\Solution_enteros.dir\comun\Solution_enteros.cpp.obj.d -o CMakeFiles\Solution_enteros.dir\comun\Solution_enteros.cpp.obj -c C:\Users\fl156\Desktop\Practica2MH\comun\Solution_enteros.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj -MF CMakeFiles\Solution_enteros.dir\comun\Solution_enteros.cpp.obj.d -o CMakeFiles\Solution_enteros.dir\comun\Solution_enteros.cpp.obj -c C:\Users\Fernando\Desktop\Practica2MH\comun\Solution_enteros.cpp
 
 CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fl156\Desktop\Practica2MH\comun\Solution_enteros.cpp > CMakeFiles\Solution_enteros.dir\comun\Solution_enteros.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Fernando\Desktop\Practica2MH\comun\Solution_enteros.cpp > CMakeFiles\Solution_enteros.dir\comun\Solution_enteros.cpp.i
 
 CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fl156\Desktop\Practica2MH\comun\Solution_enteros.cpp -o CMakeFiles\Solution_enteros.dir\comun\Solution_enteros.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Fernando\Desktop\Practica2MH\comun\Solution_enteros.cpp -o CMakeFiles\Solution_enteros.dir\comun\Solution_enteros.cpp.s
 
 # Object files for target Solution_enteros
 Solution_enteros_OBJECTS = \
@@ -93,7 +93,7 @@ Solution_enteros_EXTERNAL_OBJECTS =
 libSolution_enteros.a: CMakeFiles/Solution_enteros.dir/comun/Solution_enteros.cpp.obj
 libSolution_enteros.a: CMakeFiles/Solution_enteros.dir/build.make
 libSolution_enteros.a: CMakeFiles/Solution_enteros.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libSolution_enteros.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libSolution_enteros.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\Solution_enteros.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Solution_enteros.dir\link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/Solution_enteros.dir/clean:
 .PHONY : CMakeFiles/Solution_enteros.dir/clean
 
 CMakeFiles/Solution_enteros.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\fl156\Desktop\Practica2MH C:\Users\fl156\Desktop\Practica2MH C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug C:\Users\fl156\Desktop\Practica2MH\cmake-build-debug\CMakeFiles\Solution_enteros.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Fernando\Desktop\Practica2MH C:\Users\Fernando\Desktop\Practica2MH C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug C:\Users\Fernando\Desktop\Practica2MH\cmake-build-debug\CMakeFiles\Solution_enteros.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Solution_enteros.dir/depend
 

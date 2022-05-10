@@ -1,4 +1,5 @@
 #include "Problem.h"
+#include "Solution.h"
 #include <iostream>
 
 using namespace std;
@@ -55,3 +56,9 @@ int Problem::get_m() const {return m;}
 const vector<int>& Problem::get_N() const {return N;}
 
 const vector<vector<float>>& Problem::get_d() const {return d;}
+
+std::ostream& operator<<(std::ostream& out, Problem p) {
+    out << "n: " << p.get_n() << " // m: " << p.get_m() << endl;
+    out << "Not selected: " << p.get_N() << endl;
+    return out;
+}

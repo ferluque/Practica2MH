@@ -46,6 +46,10 @@ Solution_enteros Solution_enteros::exchange(int i, int j, vector<vector<float>> 
         if (de<min_delta)
             min_delta = de;
     }
+    if (deltas[j]>max_delta)
+        max_delta = deltas[j];
+    if (deltas[j]<min_delta)
+        min_delta = deltas[j];
     diff = max_delta - min_delta;
     return *this;
 }
@@ -270,7 +274,7 @@ Solution_enteros Solution_enteros::mutacion(const Problem &p) const {
         if (de < otra.min_delta)
             otra.min_delta = de;
     }
-    float de = otra.deltas[meter] = delta(meter,p.get_d());
+    float de = otra.deltas[meter] = otra.delta(meter,p.get_d());
     otra.selected.push_back(meter);
     if (de > max_delta)
         otra.max_delta = de;

@@ -8,7 +8,7 @@
 #include "Solution_enteros.h"
 #include "Problem.h"
 
-Solution_enteros bl(Problem p, Solution_enteros inicial);
+std::pair<Solution_enteros,int> bl(Problem p, Solution_enteros inicial);
 
 
 #endif //MAIN_CPP_BL_H

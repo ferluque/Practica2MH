@@ -9,8 +9,13 @@
 using namespace std;
 using Random = effolkronium::random_static;
 
-Solution_enteros bl(Problem p, Solution_enteros s) {
+pair<Solution_enteros,int> bl(Problem p, Solution_enteros s) {
     int contador = 0;
+
+    int evaluaciones = 0;
+
+//    cout << "Solución antes de bl " << s << endl;
+//    s.print_dist("..\\resultados\\debugging\\antesbl.csv",p.get_d());
 
     for (int i=0; i<s.get_selected().size();i++)
         p.extract(s.get_selected()[i]);
@@ -20,7 +25,7 @@ Solution_enteros bl(Problem p, Solution_enteros s) {
 
     // MODIFICACIÓN: Ahora estos vecinos no se exploran directamente sino que se almacenan en un vector
     // se baraja y se van explorando en el orden que nos de el aleatorio
-    while (contador < 1e5) {
+    while (contador < 400) {
         bool vecindario_explorado = true;
         // También almacenamos el cambio que supone la generación de ese vecino
         vector<pair<int,int>> vecinos;
@@ -33,22 +38,27 @@ Solution_enteros bl(Problem p, Solution_enteros s) {
         }
         // Una vez genere todos los vecinos los barajamos y los vamos sacando
         Random::shuffle(vecinos);
+        auto inicioexploracion = clock();
         for (auto it = vecinos.begin(); it!=vecinos.end(); ++it) {
             ++contador;
             if (contador == 1e5)
                 break;
+
             Solution_enteros v = s.neighbor((*it).first, (*it).second, p.get_d());
+
             if (v.get_diff() < s.get_diff()) {
                 s = v;
+
                 p.insert((*it).first);
                 p.extract((*it).second);
                 vecindario_explorado = false;
                 break;
             }
+            evaluaciones += 2;
         }
         if (vecindario_explorado)
             break;
     }
 
-    return s;
+    return pair<Solution_enteros,int>(s,evaluaciones);
 }
