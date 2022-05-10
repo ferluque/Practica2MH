@@ -50,11 +50,11 @@ Solution_enteros Solution_enteros::exchange(int i, int j, vector<vector<float>> 
     return *this;
 }
 
-Solution_enteros::Solution_enteros(std::vector<int> s, const std::vector<std::vector<float>> d) {
+Solution_enteros::Solution_enteros(std::vector<int> s, const Problem& p) {
     selected = s;
-    deltas[selected[0]] = max_delta = min_delta = delta(s[0], d);
+    deltas[selected[0]] = max_delta = min_delta = delta(s[0], p.get_d());
     for (int i = 1; i < selected.size(); i++) {
-        float de = delta(selected[i],d);
+        float de = delta(selected[i],p.get_d());
         deltas[selected[i]] = de;
         if (de>max_delta)
             max_delta = de;
@@ -231,4 +231,51 @@ vector<int> range(int init, int fin) {
     for (int i = init; i < fin; i++)
         v[i - init] = i;
     return v;
+}
+
+vector<Solution_enteros> genera_p0(int M, const Problem& p) {
+    vector<Solution_enteros> p0(M);
+    vector<int> seleccionados = range(0,p.get_n());
+    for (int i=0; i<M; i++) {
+        Random::shuffle(seleccionados);
+        p0[i] = Solution_enteros(vector<int>{seleccionados.begin(),seleccionados.begin()+p.get_m()},p);
+    }
+    return p0;
+}
+
+Solution_enteros::Solution_enteros(){}
+
+Solution_enteros Solution_enteros::mutacion(const Problem &p) const {
+    Solution_enteros otra(*this);
+
+    // Sacar es un índice
+    int sacar = Random::get<int>(0,otra.selected.size()-1);
+    // Meter es un punto
+    int meter = Random::get<int>(0,p.get_n()-1);
+    while (std::find(otra.selected.begin(), otra.selected.end(), meter)!=otra.selected.end())
+        meter = Random::get<int>(0,p.get_n()-1);
+
+    // Sacamos de la solución
+    int valorsacado = otra.selected[sacar];
+    otra.deltas.erase(valorsacado);
+    otra.selected.erase(otra.selected.begin()+sacar);
+
+    // Metemos y actualizamos deltas
+    otra.max_delta = otra.min_delta = otra.deltas[otra.selected[0]] = otra.deltas[otra.selected[0]] - p.get_d()[valorsacado][otra.selected[0]] + p.get_d()[meter][otra.selected[0]];
+
+    for (int i=1; i<otra.selected.size(); i++) {
+        float de = otra.deltas[otra.selected[i]] = otra.deltas[otra.selected[i]] - p.get_d()[valorsacado][otra.selected[i]] + p.get_d()[meter][otra.selected[i]];
+        if (de > otra.max_delta)
+            otra.max_delta = de;
+        if (de < otra.min_delta)
+            otra.min_delta = de;
+    }
+    float de = otra.deltas[meter] = delta(meter,p.get_d());
+    otra.selected.push_back(meter);
+    if (de > max_delta)
+        otra.max_delta = de;
+    if (de < min_delta)
+        otra.min_delta = de;
+    otra.diff = otra.max_delta-otra.min_delta;
+    return otra;
 }

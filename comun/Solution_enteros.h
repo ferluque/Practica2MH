@@ -76,7 +76,7 @@ public:
      * @param s El vector de seleccionados
      * @param d La matriz de distancias
      */
-    Solution_enteros(std::vector<int> s, const std::vector<std::vector<float>> d);
+    Solution_enteros(std::vector<int> s, const Problem& p);
 
     /**
      * Constructor de copia
@@ -127,6 +127,8 @@ public:
     std::vector<bool> repare(std::vector<bool> h, const Problem& p);
     float avg(std::vector<bool> h, const Problem& p)const;
     Solution_enteros(std::vector<bool> h, const Problem& p);
+    Solution_enteros();
+    Solution_enteros mutacion(const Problem& p)const;
 };
 
 std::ostream& operator<<(std::ostream& out, Solution_enteros s);
@@ -142,5 +144,6 @@ std::ostream& operator<<(std::ostream& out, std::vector<T> v) {
 
 std::vector<int> range(int init, int fin);
 
+std::vector<Solution_enteros> genera_p0(int M, const Problem& p);
 
 #endif //MDD_SOLUTION_H
