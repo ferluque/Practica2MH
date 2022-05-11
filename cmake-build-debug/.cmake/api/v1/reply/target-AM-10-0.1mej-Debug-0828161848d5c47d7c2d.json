@@ -71,7 +71,7 @@
 			[
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/Fernando/Desktop/Practica2MH/comun"
+					"path" : "C:/Users/fl156/Desktop/Practica2MH/comun"
 				}
 			],
 			"language" : "CXX",
@@ -84,16 +84,16 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 2,
-			"id" : "Problem::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 3,
 			"id" : "Solution_enteros::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 4,
 			"id" : "bl::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "Problem::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "AM-10-0.1mej::@6890427a1f51a3e7e1df",
