@@ -54,42 +54,67 @@ Solution_enteros AM_10_1(int M, Problem p) {
         }
         else {
             ++generaciones;
-            // Buscamos el peor de los padres
-            int peor_padre=0;
-            for (int i=1; i<Padres.size(); i++) {
-                if (Padres[i].get_diff() > Padres[peor_padre].get_diff())
-                    peor_padre = i;
-                evaluaciones += 2;
-            }
-            // Selección (2 torneos)
-            vector<Solution_enteros> intermedia(2);
-            vector<int> torneos = range(0, M);
+            // SELECCIÓN
+            // Hacer torneo entre los 50 padres para obtener 50 padres (algunos estarán repetidos pero elimina los peores)
+            // Aprovechamos ya para guardar el mejor padre
+            vector<Solution_enteros> intermedia(M);
+            vector<int> torneos = range(0, 2 * M);
             Random::shuffle(torneos);
-            for (int i = 0; i < 4; i += 2) {
-                if (Padres[torneos[i]].get_diff() <= Padres[torneos[i + 1]].get_diff())
-                    intermedia[i / 2] = Padres[torneos[i]];
+            int mejor_padre = 0;
+            for (int i = 0, j = 0; i < intermedia.size(); i++, j += 2) {
+                // Gana primero
+                if (Padres[(torneos[j]) % M].get_diff() <= Padres[(torneos[j + 1]) % M].get_diff())
+                    intermedia[i] = Padres[(torneos[j]) % M];
                 else
-                    intermedia[i / 2] = Padres[torneos[i + 1]];
-                evaluaciones += 2;
+                    intermedia[i] = Padres[(torneos[j + 1]) % M];
+                if (intermedia[mejor_padre].get_diff() > intermedia[i].get_diff())
+                    mejor_padre = i;
+                evaluaciones+=4;
             }
-            // CRUCE
-            pair<Solution_enteros, Solution_enteros> hijos;
-            hijos = intermedia[0].cruce_uniforme(intermedia[1], p);
+
+            // CRUCES
+            // Vector aleatorio de cruces: Pc = 0.7
+            float pc = 0.7;
+            int cruces_esperados = pc * M / 2;
+            vector<Solution_enteros> hijos(M);
+            Random::seed(0);
+            vector<int> cruces = range(0, M);
+            Random::shuffle(cruces);
+            int last = 0;
+            // Los cruces
+            for (int i = 0, j = 0; j < cruces_esperados; i += 2, j++) {
+                pair<Solution_enteros, Solution_enteros> doshijos = intermedia[i].cruce_uniforme(intermedia[i + 1], p);
+                hijos[i] = doshijos.first;
+                hijos[i + 1] = doshijos.second;
+                last = i + 2;
+            }
+            // Los que no cruzan
+            for (int i = last; i < cruces.size(); i++)
+                hijos[i] = intermedia[i];
+
             // MUTACIÓN
             float pm = 0.1;
-            if (Random::get<float>(0, 1) <= pm)
-                hijos.first = hijos.first.mutacion(p);
+            int mutaciones_esperadas = pm * M;
+            vector<int> mutaciones = range(0, M);
+            Random::shuffle(mutaciones);
 
-            if (Random::get<float>(0, 1) <= pm)
-                hijos.second = hijos.second.mutacion(p);
+            for (int i = 0; i < mutaciones_esperadas; i++)
+                hijos[mutaciones[i]] = hijos[mutaciones[i]].mutacion(p);
+            for (int i = mutaciones_esperadas; i < mutaciones.size(); i++)
+                hijos[mutaciones[i]] = hijos[mutaciones[i]];
 
-            // REEMPLAZAMIENTO
-            // El mejor de los dos hijos se mete por el peor de los padres si es mejor que este
-            if ((hijos.first.get_diff() < hijos.second.get_diff()) && (hijos.first.get_diff() < Padres[peor_padre].get_diff()))
-                Padres[peor_padre] = hijos.first;
-            else if (hijos.second.get_diff() < Padres[peor_padre].get_diff())
-                Padres[peor_padre] = hijos.second;
-            evaluaciones += 6;
+            // Buscamos el peor hijo y si es peor que el mejor padre lo sustituímos
+            int peor_hijo = 0;
+            for (int i = 1; i < hijos.size(); i++) {
+                if (hijos[i].get_diff() > hijos[peor_hijo].get_diff())
+                    peor_hijo = i;
+                evaluaciones+=2;
+            }
+            if (intermedia[mejor_padre].get_diff() < hijos[peor_hijo].get_diff())
+                hijos[peor_hijo] = intermedia[mejor_padre];
+            evaluaciones +=2;
+            // Reemplazamiento:
+            Padres = hijos;
         }
     }
 

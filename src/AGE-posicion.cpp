@@ -38,15 +38,28 @@ Solution AGE_posicion(int M, Problem problema) {
     while (evaluaciones < 1e5) {
         // Buscamos los dos peores padres
         pair<int,int> peores_padres(0,0);
+        float peor_diff = Padres[peores_padres.first].get_diff();
+        evaluaciones++;
 
         for (int i = 1; i < Padres.size(); i++) {
-            if (Padres[peores_padres.first].get_diff()>Padres[i].get_diff())
+            float diff_padre = Padres[i].get_diff();
+            if (diff_padre > peor_diff) {
                 peores_padres.first = i;
+                peor_diff = diff_padre;
+            }
+            evaluaciones++;
         }
+
+        peor_diff = Padres[peores_padres.second].get_diff();
         for (int i=1; i<Padres.size(); i++) {
-            if ((Padres[peores_padres.second].get_diff()>Padres[i].get_diff())&&(i!=peores_padres.first))
+            float diff_padre = Padres[i].get_diff();
+            if ((diff_padre>peor_diff)&&(i!=peores_padres.first)) {
                 peores_padres.second = i;
+                peor_diff = diff_padre;
+            }
+            evaluaciones++;
         }
+
 
         // Selección (2 torneos)
         vector<Solution> intermedia(2);

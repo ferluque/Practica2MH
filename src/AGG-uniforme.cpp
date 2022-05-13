@@ -53,7 +53,7 @@ Solution AGG_uniforme(int M, const Problem& problema) {
                 intermedia[i] = Padres[(torneos[j + 1]) % M];
             if (intermedia[mejor_padre].get_diff() > intermedia[i].get_diff())
                 mejor_padre = i;
-            evaluaciones+=2;
+            evaluaciones+=4;
         }
 
         // CRUCES

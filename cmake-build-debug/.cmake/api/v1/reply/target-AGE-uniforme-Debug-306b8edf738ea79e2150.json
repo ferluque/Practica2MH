@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "AM-10-1.exe"
+			"path" : "AGE-uniforme.exe"
 		},
 		{
-			"path" : "AM-10-1.pdb"
+			"path" : "AGE-uniforme.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -29,25 +29,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 19,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 43,
+				"line" : 40,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 44,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 45,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
@@ -70,8 +64,8 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
-					"path" : "C:/Users/fl156/Desktop/Practica2MH/comun"
+					"backtrace" : 4,
+					"path" : "C:/Users/Fernando/Desktop/Practica2MH/comun"
 				}
 			],
 			"language" : "CXX",
@@ -84,19 +78,15 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
-			"id" : "Solution_enteros::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 4,
-			"id" : "bl::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 2,
 			"id" : "Problem::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "Solution::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "AM-10-1::@6890427a1f51a3e7e1df",
+	"id" : "AGE-uniforme::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -116,12 +106,7 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "libSolution_enteros.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "libbl.a",
+				"fragment" : "libSolution.a",
 				"role" : "libraries"
 			},
 			{
@@ -131,8 +116,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "AM-10-1",
-	"nameOnDisk" : "AM-10-1.exe",
+	"name" : "AGE-uniforme",
+	"nameOnDisk" : "AGE-uniforme.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -153,7 +138,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/AM-10-1.cpp",
+			"path" : "src/AGE-uniforme.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

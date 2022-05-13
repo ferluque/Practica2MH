@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "pruebas.exe"
+			"path" : "AGE-posicion.exe"
 		},
 		{
-			"path" : "pruebas.pdb"
+			"path" : "AGE-posicion.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -29,25 +29,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 25,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 33,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 34,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 35,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
@@ -70,8 +64,8 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
-					"path" : "C:/Users/fl156/Desktop/Practica2MH/comun"
+					"backtrace" : 4,
+					"path" : "C:/Users/Fernando/Desktop/Practica2MH/comun"
 				}
 			],
 			"language" : "CXX",
@@ -84,19 +78,15 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
-			"id" : "Solution::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 4,
-			"id" : "Solution_enteros::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 2,
 			"id" : "Problem::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "Solution::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "pruebas::@6890427a1f51a3e7e1df",
+	"id" : "AGE-posicion::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -120,19 +110,14 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "libSolution_enteros.a",
-				"role" : "libraries"
-			},
-			{
 				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "pruebas",
-	"nameOnDisk" : "pruebas.exe",
+	"name" : "AGE-posicion",
+	"nameOnDisk" : "AGE-posicion.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -153,7 +138,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/pruebas.cpp",
+			"path" : "src/AGE-posicion.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
