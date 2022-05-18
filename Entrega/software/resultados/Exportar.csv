@@ -1,0 +1,10 @@
+﻿Algoritmo;Desv;Tiempo
+Greedy;0.67;24.496
+BL;0.52;593.236
+AGG-uniforme;0.46;2458.62
+AGG-posicion;0.51;1459.12
+AGE-uniforme;0.53;554.5
+AGE-posicion;0.63;248.52
+AM-10-1;0.44;2982.7
+AM-10-0.1;0.49;2211.1
+AM-10-0.1mej;0.51;2178.42
